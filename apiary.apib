@@ -1,0 +1,61 @@
+FORMAT: 1A
+HOST: http://api.spiderlog.net
+
+# Spider Log API
+Provides services for the Spider Log family, recording the world's spider sightings
+
+# Group Spiders
+Access to Spider resources
+
+## My Spiders [/spiders{?page,size}]
+### Get all my Spider Sightings [GET]
+
++ Parameters
+    + page (optional, number)... page number
+        + Default: 1
+    + size (optional, number)... page size
+        + Default: 10
+
++ Request
+
+    + Header
+    
+            Authorization: Basic RHJlYW1mb3JjZUAyMDE4
+            x-api-version: 1.0
+        
++ Response 200 (application/json)
+
+    + Header
+    
+            ETage : "sdfqfvqvqwwwdsd"
+            cache-control : max-age=600
+            
+    + Body
+    
+            {
+                "Page" :
+                {
+                    "number" : 1,
+                    "size" : 10,
+                    "totalPages": 20
+                },
+                "spiders: :
+                [
+                    {
+                        "sightedAt" : "2014-08-29T07:00",
+                        "imageUrl" : "uid-19247681/201408/14562881209_046a7f4d3d_Z.jpg",
+                        "Description" : "Spider I swa on the train",
+                        "tags" : [
+                            "stripy"
+                            ]
+                    },
+                    {
+                        "sightedAt" : "2014-08-29T07:00",
+                        "imageUrl" : "uid-19247681/201408/14562881209_046a7f4d3d_Z.jpg",
+                        "Description" : "Spider I swa on the office",
+                        "tags" : [
+                            "big"
+                            ]
+                    }
+                ]
+            }
